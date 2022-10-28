@@ -17,8 +17,8 @@ const Yargs = require('yargs')
     //     alias: 'c',
     //     describe: 'Color to draw lines with',
     // })
-    .default("width", "5120", "default width")
-    .default("height", "2880", "default width")
+    .default("width", 5120, "default width")
+    .default("height", 2880, "default width")
     .help();
 
 const fs = require("fs")
@@ -437,16 +437,16 @@ const { width, height } = argv
 
 console.log("Creating SVG (", width, " x ", height, ")")
 
-const myCanvas = createCanvas(+width, +height, "svg");
+const myCanvas = createCanvas(width, height, "svg");
 ctx = myCanvas.getContext("2d")
 
 ctx.beginPath()
 ctx.moveTo(0,0)
-ctx.lineTo(+width,0)
-ctx.lineTo(+width,+height)
-ctx.lineTo(0,+height)
+ctx.lineTo(width,0)
+ctx.lineTo(width,height)
+ctx.lineTo(0,height)
 ctx.clip()
 
-render(myCanvas, +width, +height)
+render(myCanvas, width, height)
 
 fs.writeFileSync(files[0], myCanvas.toBuffer())
