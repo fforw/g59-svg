@@ -1,0 +1,12 @@
+{
+  "name": "g59-cairo",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "canvas": "^2.10.1",
+    "d3-polygon": "^3.0.1",
+    "d3-voronoi": "^1.1.4",
+    "yargs": "^17.6.0"
+  }
+}
